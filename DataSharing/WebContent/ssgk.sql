@@ -1,0 +1,158 @@
+-- phpMyAdmin SQL Dump
+-- version 4.0.4
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: May 11, 2020 at 02:52 PM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `ssgk`
+--
+CREATE DATABASE IF NOT EXISTS `ssgk` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `ssgk`;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dataowner`
+--
+
+CREATE TABLE IF NOT EXISTS `dataowner` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) NOT NULL,
+  `Email` varchar(45) NOT NULL,
+  `Password` varchar(250) NOT NULL,
+  `RPassword` varchar(250) NOT NULL,
+  `Time` varchar(45) NOT NULL,
+  `OTP` varchar(45) NOT NULL,
+  `grp` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `dataowner`
+--
+
+INSERT INTO `dataowner` (`id`, `Name`, `Email`, `Password`, `RPassword`, `Time`, `OTP`, `grp`) VALUES
+(1, 'Naresh', 'naresh@gmail.com', 'xDLw6SInRnQ=', 'xDLw6SInRnQ=', '2019/11/22 16:35:50', '72847', '2123456789');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `dofiles`
+--
+
+CREATE TABLE IF NOT EXISTS `dofiles` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `DO_Name` varchar(45) NOT NULL,
+  `DO_Id` varchar(45) NOT NULL,
+  `File_Name` varchar(45) NOT NULL,
+  `Time` varchar(45) NOT NULL,
+  `Dkey` varchar(45) NOT NULL,
+  `Enc_Con` longblob NOT NULL,
+  `Con` longblob NOT NULL,
+  `grp` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `dofiles`
+--
+
+INSERT INTO `dofiles` (`id`, `DO_Name`, `DO_Id`, `File_Name`, `Time`, `Dkey`, `Enc_Con`, `Con`, `grp`) VALUES
+(1, 'Naresh', '1', 'Cloud.txt', '2019/11/22 16:37:14', 'hNLBc7VnK0duXwIb1+twVQ==', 0x45614f37754d43734b56477564456f794933476c4c584e667767344a37665257336a614f30676d773248617741622b75503471574f65344e32587875677a7672575a73577651476c7a5938550d0a684a7a36344f33624b5653656a4a4d76714d4e6c6d706a335452772f505442695957566449626a794243374b427465664d7156507253795a6b316d4f4e4f394e6a6854514e704562656a48460d0a6f564e4873477135783976366272455a6b6c6432713363714b684c6a43794850676537647368346754384643462f4e617578326a364c50643547457a4d59496641704668652b436b4f4a354c0d0a44773943775379396f47506831726f6e78465952457a774b72752b7835514c4b6d6948426e70396b5a6357545a7459747863316c3866664648364f6145654f5449372b33645546484e444d330d0a4433303672646a325a686e6b35344352685a374e566951742f47316937784a376b4c746b375665325a76485a66664236656333755039666b7a68343d, 0x4120636c6f7564207365727665722069732061207669727475616c2073657276657220726174686572207468616e206120706879736963616c207365727665722072756e6e696e6720696e206120636c6f756420636f6d707574696e6720656e7669726f6e6d656e742e204974206973206275696c742c20686f7374656420616e642064656c69766572656420766961206120636c6f756420636f6d707574696e6720706c6174666f726d207669612074686520696e7465726e65742c20616e642063616e2062652061636365737365642072656d6f74656c792e20546865792061726520616c736f206b6e6f776e206173207669727475616c20736572766572732e, '2123456789'),
+(2, 'Naresh', '1', 'Data Integrity.txt', '2019/11/22 16:38:58', 'qkmHe4v74sOxw8LLp2PrhQ==', 0x727741494b546d3936552f6465625a736c7a32594f43516a504f7a2f526432456d7a324e78506b675349303043524e594d6179322b39587954586e66684b784f6d4b57696847315761476f380d0a7648744f2b7473666d534f7a574b4d7a6c394a456a39356d46744a345954383577302b2f797538364356564e4d68646157464f394a4663744d346672435339486e6443765536506a376630700d0a70646c4a4267334362524650676e722b676a785841684c4a55464e7a654d394d31424447526b37694c4a2b695732743045476c54534a7071433869794e324f4f772b56324f417a35696a502b0d0a4471514277364f336a68334a35724353332b506d4542666c5a6a453076392f7845452b47544b6e5a4e43795144316a516c51555234577537753446484243617a744e5768774949375553747a0d0a744c6d71644757644e68676f5a693455614c5a304e4a53427163393441332f736771654265773d3d, 0x4461746120696e7465677269747920697320746865206d61696e74656e616e6365206f662c20616e6420746865206173737572616e6365206f662074686520616363757261637920616e6420636f6e73697374656e6379206f662c2064617461206f7665722069747320656e74697265206c6966652d6379636c652c20616e64206973206120637269746963616c2061737065637420746f207468652064657369676e2c20696d706c656d656e746174696f6e20616e64207573616765206f6620616e792073797374656d2077686963682073746f7265732c2070726f6365737365732c206f722072657472696576657320646174612e, '2123456789');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `download`
+--
+
+CREATE TABLE IF NOT EXISTS `download` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `mid` varchar(45) NOT NULL,
+  `mname` varchar(45) NOT NULL,
+  `filename` varchar(45) NOT NULL,
+  `time` datetime NOT NULL,
+  `fid` varchar(45) NOT NULL,
+  `doname` varchar(45) NOT NULL,
+  `doid` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `download`
+--
+
+INSERT INTO `download` (`id`, `mid`, `mname`, `filename`, `time`, `fid`, `doname`, `doid`) VALUES
+(1, '1', 'Sabari', 'Cloud.txt', '2019-11-22 16:58:08', '1', 'Naresh', '1'),
+(2, '1', 'Sabari', 'Data Integrity.txt', '2019-11-22 16:59:31', '2', 'Naresh', '1'),
+(3, '1', 'Sabari', 'Data Integrity.txt', '2019-11-22 16:59:35', '2', 'Naresh', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `member`
+--
+
+CREATE TABLE IF NOT EXISTS `member` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Name` varchar(45) NOT NULL,
+  `Email` varchar(45) NOT NULL,
+  `Password` varchar(45) NOT NULL,
+  `grp` varchar(45) NOT NULL,
+  `Time` varchar(45) NOT NULL,
+  `Statuss` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `member`
+--
+
+INSERT INTO `member` (`id`, `Name`, `Email`, `Password`, `grp`, `Time`, `Statuss`) VALUES
+(1, 'Sabari', 'naresh@gmail.com', 'vSqNbb0eHls=', '2123456789', '2019/11/22 16:41:58', 'Active');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `request`
+--
+
+CREATE TABLE IF NOT EXISTS `request` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `filename` varchar(45) NOT NULL,
+  `time` varchar(45) NOT NULL,
+  `mid` varchar(45) NOT NULL,
+  `mname` varchar(45) NOT NULL,
+  `statuss` varchar(45) NOT NULL,
+  `fid` varchar(45) NOT NULL,
+  `doid` varchar(45) NOT NULL,
+  `mmail` varchar(45) NOT NULL,
+  `dkey` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `request`
+--
+
+INSERT INTO `request` (`id`, `filename`, `time`, `mid`, `mname`, `statuss`, `fid`, `doid`, `mmail`, `dkey`) VALUES
+(1, 'Cloud.txt', '2019/11/22 16:48:49', '1', 'Sabari', 'Approved', '1', '1', 'naresh@gmail.com', 'hNLBc7VnK0duXwIb1+twVQ=='),
+(2, 'Data Integrity.txt', '2019/11/22 16:58:52', '1', 'Sabari', 'Approved', '2', '1', 'naresh@gmail.com', 'qkmHe4v74sOxw8LLp2PrhQ==');
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

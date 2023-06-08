@@ -1,0 +1,5 @@
+INDEX VERSION 1.126
+D:\Major12\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\281918087.index
+\Sample\src
+D:\Major12\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2014868205.index
+\DataSharing\src
